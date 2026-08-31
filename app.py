@@ -145,6 +145,34 @@ def discover(seed: int, live: bool = False, depth: int = Query(0, ge=0, le=7),
     return out
 
 
+def _canon_strategy(ledger) -> tuple[Strategy, list[tuple[dict, float]]]:
+    """The strategy currently in canon, and the diffs the gate has refused.
+
+    Promotions move canon; refusals do not. Replaying the promoted diffs in
+    order therefore reconstructs the live champion, and the refused ones become
+    the proposer's memory.
+    """
+    params: dict = {}
+    refused: list[tuple[dict, float]] = []
+    try:
+        records = sorted(ledger.receipts(), key=lambda r: r.get("created_at", 0))
+    except Exception:                      # a cold ledger is not an error
+        return Strategy(), refused
+    for r in records:
+        diff = r.get("diff") or {}
+        if not diff:
+            continue
+        if r.get("verdict") == "PROMOTED":
+            params.update({k: v[0] for k, v in diff.items() if k in TUNABLE})
+        else:
+            refused.append((diff, r.get("challenger_score", 0.0)
+                            - r.get("champion_score", 0.0)))
+    try:
+        return Strategy(**params), refused
+    except TypeError:                      # an unknown knob must not break the demo
+        return Strategy(), refused
+
+
 @app.post("/evolve")
 def evolve() -> dict:
     """Gemini proposes a change to the scientist's own method; the gate rules on it."""
@@ -153,9 +181,17 @@ def evolve() -> dict:
     gate = PromotionGate(
         ledger, evaluate_strategy, margin=0.02, detailed=evaluate_detailed,
         auditor=lambda r: audit_promotion(r, {k: t.__name__ for k, t in TUNABLE.items()}))
-    champion = Strategy()
+    # Continue from canon rather than restarting at champion-v1 every click.
+    # set_canon only stores a name and digest, so the live champion is rebuilt by
+    # replaying the promoted diffs in order — the same reconstruction
+    # tests/test_committed_receipts.py uses to prove the receipts replay.
+    champion, refused = _canon_strategy(ledger)
     challenger_holder = {}
     proposer = GeminiProposer()
+    # Verdicts already on the record are handed back, so the proposer does not
+    # re-offer something the gate has already turned down.
+    for diff, gain in refused[-5:]:
+        proposer.remember_verdict(diff, gain, promoted=False)
     original = proposer.propose
 
     def capture(champ, notes=""):
