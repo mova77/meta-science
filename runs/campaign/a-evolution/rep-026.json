@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.912,
+   "gain": 0.0416,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "The system lowered the number of samples per arm, resulting in a drop in accuracy that exceeds the noise threshold, trading scientific rigor for a lower measurement cost.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "af6e9785f4ada149"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-6396",
+   "diff": {
+    "samples_per_arm": [
+     100,
+     150
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.9259,
+   "gain": 0.0139,
+   "reason": "gained +0.0139, needed +0.02",
+   "audit": null,
+   "digest": "6cef6b7369e20fe1"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-2550",
+   "diff": {
+    "max_experiments": [
+     8,
+     12
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.8833,
+   "gain": -0.0287,
+   "reason": "gained -0.0287, needed +0.02",
+   "audit": null,
+   "digest": "478266e0860e32d5"
+  }
+ ],
+ "canon": "gemini-1740",
+ "rep": 26
+}

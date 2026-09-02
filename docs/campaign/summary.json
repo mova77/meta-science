@@ -1,0 +1,79 @@
+{
+  "b1_recall": {
+    "tycho_blind": {
+      "n": 30,
+      "recognises": 2,
+      "rate": [
+        0.06666666666666667,
+        0.01847663532769335,
+        0.21323817721072091
+      ],
+      "median_err": 0.011358
+    },
+    "tycho_labeled": {
+      "n": 30,
+      "recognises": 30,
+      "rate": [
+        1.0,
+        0.8864829086095221,
+        1.0
+      ],
+      "median_err": 0.004907
+    },
+    "synth_blind": {
+      "n": 30,
+      "recognises": 11,
+      "rate": [
+        0.36666666666666664,
+        0.21873702204017678,
+        0.5448675356639506
+      ],
+      "median_err": 0.001316
+    }
+  },
+  "b2_refine": {
+    "n": 30,
+    "round1_shapes": {
+      "conic": 0,
+      "cosine": 30,
+      "other": 0
+    },
+    "round2_ran": 0,
+    "round2_improved": 0
+  },
+  "b3_thirdlaw": {
+    "n": 30,
+    "power_law_form": 29,
+    "named_a_3_2_law": 13,
+    "exponent_mean": 1.7056,
+    "exponent_min": 1.5,
+    "exponent_max": 2.0
+  },
+  "b4_secondlaw": {
+    "equal_areas": {
+      "n": 30,
+      "kept_in_round2": 2,
+      "final_extrapolates": 22
+    },
+    "drag": {
+      "n": 30,
+      "kept_in_round2": 11,
+      "final_extrapolates": 11
+    }
+  },
+  "a_evolution": {
+    "n": 30,
+    "verdict_patterns": {
+      "PRR": 29,
+      "PRP": 1
+    },
+    "refused_higher_scoring": 33,
+    "refused_lower_scoring": 26,
+    "audit_on_promotions": {
+      "flagged": 27,
+      "legitimate": 4,
+      "other": 0
+    },
+    "changed_knob_at_least_once": 29
+  }
+}

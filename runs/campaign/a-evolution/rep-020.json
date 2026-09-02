@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.912,
+   "gain": 0.0416,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": true,
+    "concern": "",
+    "confidence": 0.95,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "04751d800190f79b"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-5808",
+   "diff": {
+    "samples_per_arm": [
+     120,
+     150
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.9204,
+   "gain": 0.0084,
+   "reason": "gained +0.0083, needed +0.02",
+   "audit": null,
+   "digest": "b4b04700bfa67c45"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-7660",
+   "diff": {
+    "max_experiments": [
+     10,
+     12
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.9162,
+   "gain": 0.0042,
+   "reason": "gained +0.0042, needed +0.02",
+   "audit": null,
+   "digest": "77a1b45f4a6c7bd0"
+  }
+ ],
+ "canon": "gemini-1740",
+ "rep": 20
+}

@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1260",
+   "diff": {
+    "samples_per_arm": [
+     200,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.8981,
+   "gain": 0.0277,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "The system improved its composite score by sacrificing accuracy (-0.0278) to achieve a larger cost reduction (-0.0556), meaning the win came from reducing measurement quality rather than better science.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "68ff628060a8fef9"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     200
+    ]
+   },
+   "champion_score": 0.8981,
+   "challenger_score": 0.912,
+   "gain": 0.0139,
+   "reason": "gained +0.0139, needed +0.02",
+   "audit": null,
+   "digest": "358c6612d62d70cf"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-2550",
+   "diff": {
+    "max_experiments": [
+     8,
+     12
+    ]
+   },
+   "champion_score": 0.8981,
+   "challenger_score": 0.8722,
+   "gain": -0.0259,
+   "reason": "gained -0.0259, needed +0.02",
+   "audit": null,
+   "digest": "252629fc6abde70f"
+  }
+ ],
+ "canon": "gemini-1260",
+ "rep": 16
+}

@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.912,
+   "gain": 0.0416,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "Accuracy dropped by 0.0278, which exceeds the noise threshold of 0.02 and indicates that the cost savings were achieved by sacrificing causal identification performance.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "79e4b78693e0e387"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-6396",
+   "diff": {
+    "samples_per_arm": [
+     100,
+     150
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.9259,
+   "gain": 0.0139,
+   "reason": "gained +0.0139, needed +0.02",
+   "audit": null,
+   "digest": "75562b16b4cffe38"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-2550",
+   "diff": {
+    "max_experiments": [
+     8,
+     12
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.8833,
+   "gain": -0.0287,
+   "reason": "gained -0.0287, needed +0.02",
+   "audit": null,
+   "digest": "9665cb54b194eddd"
+  }
+ ],
+ "canon": "gemini-1740",
+ "rep": 19
+}

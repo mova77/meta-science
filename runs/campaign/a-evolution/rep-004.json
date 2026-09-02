@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1260",
+   "diff": {
+    "samples_per_arm": [
+     200,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.8981,
+   "gain": 0.0277,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": true,
+    "concern": "The slight drop in accuracy of 0.0278 is within the noise threshold of 0.05 and accompanies a substantial cost reduction, representing a genuine efficiency gain.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "e1311a427d8d3424"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     200
+    ]
+   },
+   "champion_score": 0.8981,
+   "challenger_score": 0.912,
+   "gain": 0.0139,
+   "reason": "gained +0.0139, needed +0.02",
+   "audit": null,
+   "digest": "91d265e7f2215ba6"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-1870",
+   "diff": {
+    "effect_threshold": [
+     0.2,
+     0.15
+    ]
+   },
+   "champion_score": 0.8981,
+   "challenger_score": 0.8981,
+   "gain": 0.0,
+   "reason": "gained +0.0000, needed +0.02",
+   "audit": null,
+   "digest": "570e857556d30393"
+  }
+ ],
+ "canon": "gemini-1260",
+ "rep": 4
+}

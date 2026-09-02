@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.912,
+   "gain": 0.0416,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "The accuracy dropped by 0.0278, which exceeds the required noise margin of 0.02, indicating a sacrifice in scientific performance to achieve cost savings.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "b409cb51b5c4c19f"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-6396",
+   "diff": {
+    "samples_per_arm": [
+     100,
+     150
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.9259,
+   "gain": 0.0139,
+   "reason": "gained +0.0139, needed +0.02",
+   "audit": null,
+   "digest": "faf649609e27ec52"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-1870",
+   "diff": {
+    "effect_threshold": [
+     0.2,
+     0.15
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.912,
+   "gain": 0.0,
+   "reason": "gained +0.0000, needed +0.02",
+   "audit": null,
+   "digest": "84475b029e540418"
+  }
+ ],
+ "canon": "gemini-1740",
+ "rep": 3
+}

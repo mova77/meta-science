@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-6396",
+   "diff": {
+    "samples_per_arm": [
+     100,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.9259,
+   "gain": 0.0555,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "Accuracy fell by 0.0278, which exceeds the noise threshold of 0.02, demonstrating a real trade-off where cost savings masked a decline in scientific accuracy.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "10554861766b6f1e"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-7706",
+   "diff": {
+    "samples_per_arm": [
+     80,
+     100
+    ]
+   },
+   "champion_score": 0.9259,
+   "challenger_score": 0.9176,
+   "gain": -0.0083,
+   "reason": "gained -0.0083, needed +0.02",
+   "audit": null,
+   "digest": "c766cc29429822a1"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-7660",
+   "diff": {
+    "max_experiments": [
+     10,
+     12
+    ]
+   },
+   "champion_score": 0.9259,
+   "challenger_score": 0.9287,
+   "gain": 0.0028,
+   "reason": "gained +0.0028, needed +0.02",
+   "audit": null,
+   "digest": "f25132b404dc396f"
+  }
+ ],
+ "canon": "gemini-6396",
+ "rep": 8
+}

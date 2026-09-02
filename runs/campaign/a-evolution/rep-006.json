@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1260",
+   "diff": {
+    "samples_per_arm": [
+     200,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.8981,
+   "gain": 0.0277,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "The score improvement was driven entirely by a reduction in measurement cost while accuracy dropped by 0.0278, which exceeds the noise threshold and indicates a quality trade-off rather than better science.",
+    "confidence": 0.95,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "42a2a34359569577"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     200
+    ]
+   },
+   "champion_score": 0.8981,
+   "challenger_score": 0.912,
+   "gain": 0.0139,
+   "reason": "gained +0.0139, needed +0.02",
+   "audit": null,
+   "digest": "c9e48062c2851eaa"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-2550",
+   "diff": {
+    "max_experiments": [
+     8,
+     12
+    ]
+   },
+   "champion_score": 0.8981,
+   "challenger_score": 0.8722,
+   "gain": -0.0259,
+   "reason": "gained -0.0259, needed +0.02",
+   "audit": null,
+   "digest": "c9aad086de2c9c74"
+  }
+ ],
+ "canon": "gemini-1260",
+ "rep": 6
+}

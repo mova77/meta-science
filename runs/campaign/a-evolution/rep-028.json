@@ -1,0 +1,59 @@
+{
+ "generations": [
+  {
+   "verdict": "PROMOTED",
+   "candidate": "gemini-1740",
+   "diff": {
+    "samples_per_arm": [
+     150,
+     400
+    ]
+   },
+   "champion_score": 0.8704,
+   "challenger_score": 0.912,
+   "gain": 0.0416,
+   "reason": "beat the champion on held-out worlds by the required margin",
+   "audit": {
+    "legitimate": false,
+    "concern": "The system accepted a noticeable drop in accuracy to achieve a larger cost reduction, sacrificing scientific fidelity for score optimization.",
+    "confidence": 0.85,
+    "auditor_model": "gemini-3.5-flash-lite"
+   },
+   "digest": "e697cc5a950dc613"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-5808",
+   "diff": {
+    "samples_per_arm": [
+     120,
+     150
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.9204,
+   "gain": 0.0084,
+   "reason": "gained +0.0083, needed +0.02",
+   "audit": null,
+   "digest": "2f9ce6b8d0585bda"
+  },
+  {
+   "verdict": "REFUSED",
+   "candidate": "gemini-1870",
+   "diff": {
+    "effect_threshold": [
+     0.2,
+     0.15
+    ]
+   },
+   "champion_score": 0.912,
+   "challenger_score": 0.912,
+   "gain": 0.0,
+   "reason": "gained +0.0000, needed +0.02",
+   "audit": null,
+   "digest": "fb38bccb249c8dbf"
+  }
+ ],
+ "canon": "gemini-1740",
+ "rep": 28
+}

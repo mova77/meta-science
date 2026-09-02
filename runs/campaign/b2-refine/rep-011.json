@@ -1,0 +1,44 @@
+{
+ "round1": {
+  "exchange": {
+   "prompt": "11 measured rows of two variables. x1 is a cyclic coordinate with period 1 (x1=0 and x1=1 are the same place). x2 is a positive measured quantity in fixed but unstated units. Nothing else about the source of this data is available.\n\n  x1=0.75   x2=1.23183\n  x1=0.67291   x2=1.23781\n  x1=0.59543   x2=1.22572\n  x1=0.51533   x2=1.19812\n  x1=0.43071   x2=1.16143\n  x1=0.34049   x2=1.12562\n  x1=0.24526   x2=1.10218\n  x1=0.1477   x2=1.09972\n  x1=0.05169   x2=1.1192\n  x1=0.96028   x2=1.15333\n  x1=0.87451   x2=1.19076\n\nTask:\n1. Does x2 depend on x1?\n2. Write ONE mathematical expression for x2 as a function of x1. You may use: numbers, x1, free constants c1 c2 c3 c4 (their values will be fitted for you \u2014 put every tunable quantity into a constant), pi, + - * / parentheses, and the functions cos sin exp log sqrt abs pow(base, exponent). Nothing else. Choose the SHAPE of the law; do not solve for the constants.\n3. The expression will be judged on measurements you have not seen, including near x1=0.97163.\n4. Say what specific physical system, if any, you believe produced this data. If you cannot name one, say so.\n5. One sentence of rationale.",
+   "answer": {
+    "depends_on_x1": true,
+    "expression": "c1 + c2 * cos(2 * pi * (x1 - c3))",
+    "claimed_source": "Unknown generic physical oscillator or keplerian orbital signal",
+    "rationale": "The data exhibits a smooth periodic oscillation with a period of 1 as x1 cycles from 0 to 1."
+   },
+   "model": "gemini-3.6-flash",
+   "seconds": 18.3,
+   "at": "2026-09-02T16:21:36Z"
+  },
+  "scored": {
+   "expression": "c1 + c2 * cos(2 * pi * (x1 - c3))",
+   "interpolation": {
+    "constants": {
+     "c1": 1.165887,
+     "c2": -0.070056,
+     "c3": 6.186032
+    },
+    "complexity": 12,
+    "train_sse": 0.000230018,
+    "holdout_mean_abs_err": 0.001316,
+    "holdout_worst_abs_err": 0.002136
+   },
+   "extrapolation": {
+    "constants": {
+     "c1": 1.165861,
+     "c2": -0.070072,
+     "c3": 2.186116
+    },
+    "train_rows": 82,
+    "judged_rows": 27,
+    "future_mean_abs_err": 0.00132,
+    "future_worst_abs_err": 0.002148
+   },
+   "extrapolation_penalty": 1.003,
+   "extrapolates": true
+  }
+ },
+ "rep": 11
+}

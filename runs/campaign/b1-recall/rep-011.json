@@ -1,0 +1,129 @@
+{
+ "tycho_blind": {
+  "exchange": {
+   "prompt": "4 measured rows of two variables. x1 is a cyclic coordinate with period 1 (x1=0 and x1=1 are the same place). x2 is a positive measured quantity in fixed but unstated units. Nothing else about the source of this data is available.\n\n  x1=0.12329   x2=1.09696\n  x1=0.41449   x2=1.2346\n  x1=0.43914   x2=1.22255\n  x1=0.51444   x2=1.19651\n\nTask:\n1. Does x2 depend on x1?\n2. Write ONE mathematical expression for x2 as a function of x1. You may use: numbers, x1, free constants c1 c2 c3 c4 (their values will be fitted for you \u2014 put every tunable quantity into a constant), pi, + - * / parentheses, and the functions cos sin exp log sqrt abs pow(base, exponent). Nothing else. Choose the SHAPE of the law; do not solve for the constants.\n3. The expression will be judged on measurements you have not seen, including near x1=0.91701.\n4. Say what specific physical system, if any, you believe produced this data. If you cannot name one, say so.\n5. One sentence of rationale.",
+   "answer": {
+    "depends_on_x1": true,
+    "expression": "c1 + c2 * cos(2 * pi * x1 + c3)",
+    "claimed_source": "Unknown",
+    "rationale": "Because x1 is a cyclic coordinate with period 1, x2 is modeled using a single-harmonic sinusoidal function."
+   },
+   "model": "gemini-3.6-flash",
+   "seconds": 15.94,
+   "at": "2026-09-02T15:59:57Z"
+  },
+  "scored": {
+   "expression": "c1 + c2 * cos(2 * pi * x1 + c3)",
+   "interpolation": {
+    "constants": {
+     "c1": 1.120552,
+     "c2": 0.114195,
+     "c3": 3.729646
+    },
+    "complexity": 12,
+    "train_sse": 0.0,
+    "holdout_mean_abs_err": 0.011357,
+    "holdout_worst_abs_err": 0.012924
+   },
+   "extrapolation": {
+    "constants": {
+     "c1": 1.12005,
+     "c2": -0.133841,
+     "c3": 1.080852
+    },
+    "train_rows": 3,
+    "judged_rows": 1,
+    "future_mean_abs_err": 0.024437,
+    "future_worst_abs_err": 0.024437
+   },
+   "extrapolation_penalty": 2.152,
+   "extrapolates": true
+  },
+  "recognises": false
+ },
+ "tycho_labeled": {
+  "exchange": {
+   "prompt": "4 heliocentric positions of the planet Mars, triangulated from Tycho Brahe's observations by the 687-day method Kepler describes in Astronomia Nova. Columns: heliocentric longitude (degrees), Sun-Mars distance (astronomical units).\n\n  longitude=44.386 deg   distance=1.5027 AU\n  longitude=149.218 deg   distance=1.6912 AU\n  longitude=158.091 deg   distance=1.6747 AU\n  longitude=185.2 deg   distance=1.639 AU\n\nTask:\n1. Does the distance depend on the longitude?\n2. Write ONE mathematical expression for the distance as a function of x1, the longitude in DEGREES. You may use: numbers, x1, free constants c1 c2 c3 c4 (their values will be fitted for you), pi, + - * / parentheses, and the functions cos sin exp log sqrt abs pow(base, exponent). Nothing else.\n3. The expression will be judged on positions you have not seen.\n4. Say what physical system you believe produced this data.\n5. One sentence of rationale.",
+   "answer": {
+    "depends_on_x1": true,
+    "expression": "c1 / (1 + c2 * cos((x1 - c3) * pi / 180))",
+    "claimed_source": "Mars's elliptical orbit around the Sun",
+    "rationale": "Kepler's first law dictates that a planet's distance from the Sun as a function of its heliocentric longitude follows the polar equation of an ellipse with the Sun at one focus."
+   },
+   "model": "gemini-3.6-flash",
+   "seconds": 22.84,
+   "at": "2026-09-02T16:00:21Z"
+  },
+  "scored": {
+   "expression": "c1 / (1 + c2 * cos((x1 - c3) * pi / 180))",
+   "interpolation": {
+    "constants": {
+     "c1": 1.518967,
+     "c2": 0.103055,
+     "c3": -39.584251
+    },
+    "complexity": 14,
+    "train_sse": 0.0,
+    "holdout_mean_abs_err": 0.004907,
+    "holdout_worst_abs_err": 0.009654
+   },
+   "extrapolation": {
+    "constants": {
+     "c1": 1.518562,
+     "c2": 0.11342,
+     "c3": -56.621269
+    },
+    "train_rows": 3,
+    "judged_rows": 1,
+    "future_mean_abs_err": 0.034502,
+    "future_worst_abs_err": 0.034502
+   },
+   "extrapolation_penalty": 7.031,
+   "extrapolates": false
+  },
+  "recognises": true
+ },
+ "synth_blind": {
+  "exchange": {
+   "prompt": "11 measured rows of two variables. x1 is a cyclic coordinate with period 1 (x1=0 and x1=1 are the same place). x2 is a positive measured quantity in fixed but unstated units. Nothing else about the source of this data is available.\n\n  x1=0.75   x2=1.23183\n  x1=0.67291   x2=1.23781\n  x1=0.59543   x2=1.22572\n  x1=0.51533   x2=1.19812\n  x1=0.43071   x2=1.16143\n  x1=0.34049   x2=1.12562\n  x1=0.24526   x2=1.10218\n  x1=0.1477   x2=1.09972\n  x1=0.05169   x2=1.1192\n  x1=0.96028   x2=1.15333\n  x1=0.87451   x2=1.19076\n\nTask:\n1. Does x2 depend on x1?\n2. Write ONE mathematical expression for x2 as a function of x1. You may use: numbers, x1, free constants c1 c2 c3 c4 (their values will be fitted for you \u2014 put every tunable quantity into a constant), pi, + - * / parentheses, and the functions cos sin exp log sqrt abs pow(base, exponent). Nothing else. Choose the SHAPE of the law; do not solve for the constants.\n3. The expression will be judged on measurements you have not seen, including near x1=0.97163.\n4. Say what specific physical system, if any, you believe produced this data. If you cannot name one, say so.\n5. One sentence of rationale.",
+   "answer": {
+    "depends_on_x1": true,
+    "expression": "c1 + c2 * cos(2 * pi * x1 + c3)",
+    "claimed_source": "unknown",
+    "rationale": "The data exhibits a smooth, single-harmonic sinusoidal variation as a function of the period-1 cyclic coordinate x1."
+   },
+   "model": "gemini-3.6-flash",
+   "seconds": 14.45,
+   "at": "2026-09-02T16:00:36Z"
+  },
+  "scored": {
+   "expression": "c1 + c2 * cos(2 * pi * x1 + c3)",
+   "interpolation": {
+    "constants": {
+     "c1": 1.165886,
+     "c2": -0.070056,
+     "c3": -1.168878
+    },
+    "complexity": 12,
+    "train_sse": 0.000230018,
+    "holdout_mean_abs_err": 0.001316,
+    "holdout_worst_abs_err": 0.002137
+   },
+   "extrapolation": {
+    "constants": {
+     "c1": 1.165861,
+     "c2": 0.070072,
+     "c3": 1.972191
+    },
+    "train_rows": 82,
+    "judged_rows": 27,
+    "future_mean_abs_err": 0.00132,
+    "future_worst_abs_err": 0.002148
+   },
+   "extrapolation_penalty": 1.003,
+   "extrapolates": true
+  },
+  "recognises": false
+ },
+ "rep": 11
+}
